@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Mitr', sans-serif;
+    font-weight: 400;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* Section 1 */
+.section-1 {
+    width: 100%;
+    height: 100vh;
+    background-color: #2d2a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.section-heading{
+    font-size: 12rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: .3rem .3rem .3rem #000;
+}
+
+.section-1-icons i{
+    font-size: 30rem;
+    color: #acac07;
+    position: absolute;
+    transform: translate(-50%, -50%)scale(0);
+    text-shadow:.2rem .2rem .2rem #000;
+    transition: transform .3s;
+}
+
+.section-1-icons i.change{
+    transform: translate(-50%, -50%)scale(1); 
+    transition: transform .3s .3s; 
+}
+/* End of section 1 */
+
+/* Section 2 */
+.section-2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #373636;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 25rem;
+    background-color: #acac07;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1rem 1rem 1rem #000000;
+    position: relative;
+    transform: rotateY(20deg) skewX(-2deg);
+    transition: transform .5s, box-shadow .5s;
+}
+
+.card:hover{
+    transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+    box-shadow: 2rem 2rem 2rem #000;
+}
+
+.card::before {
+    content: "";
+    height: 100%;
+    width: 1rem;
+    background-color: #a60398;
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+    text-shadow: -.1rem -.1rem -.1rem #000;
+}
+
+.card::after {
+    content: "";
+    height: 1rem;
+    width: 100%;
+    background-color: #041a53;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+    text-shadow: -.1rem -.1rem -.1rem #000;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-name {
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: .5rem;
+    margin: 2rem 0;
+    text-shadow: .15rem .15rem .15rem #000;
+}
+
+.card-btn {
+    width: 70%;
+    background-color: #111;
+    color: #888;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    border-radius: 5rem;
+    text-transform: capitalize;
+    border: none;
+    padding: .5rem 0;
+    cursor: pointer;
+    box-shadow: -.2rem -.2rem -.2rem #000;
+}
+/* End of Section 2 */
+
+/* Section 3 */
+.section-3 {
+    background-color: #333;
+    padding: 5rem 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
+
+.gallery-link {
+    position: relative;
+    margin: 3rem 1rem;
+    position: relative;
+}
+
+.gallery-link::before {
+    content: "";
+    width: .2rem;
+    height: 0;
+    background-color: #fff;
+    position: absolute;
+    z-index: 10;
+    top: 2vw;
+    right: 5rem;
+    transition: height .5s;
+}
+
+.gallery-link:hover::before{
+    height: 80%;
+}
+
+.gallery-link::after {
+    content: "";
+    width: 0;
+    height: .2rem;
+    background-color: #fff;
+    position: absolute;
+    top: 30%;
+    left: 2rem;
+    transition: width .5s;
+}
+
+.gallery-link:hover::after{
+    width: 90%;
+}
+
+.food-img {
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: .3rem .3rem .1rem #800106, .5rem .5rem .1rem #c4d107, .7rem .7rem .1rem #0703be, .9rem .9rem .5rem #a60398;
+    transition: all .5s;
+}
+
+.gallery-link:hover .food-img {
+    box-shadow: 1rem 1rem .1rem #800106, 2rem 2rem .1rem #c4d107, 3rem 3rem .1rem #0703be, 4rem 4rem .5rem #a60398;
+    filter: blur(.5rem);
+    opacity: .5;
+    transform: scale(1.1);
+}
+
+.food-name {
+    position: absolute;
+    top: 2.5rem;
+    left: 3rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+}
+
+.gallery-link:hover .food-name {
+    width: 100%;
+    transition: width 1.5s .5s;
+}
+
+.food-description {
+    position: absolute;
+    bottom: 3vw;
+    left: 2rem;
+    width: 80%;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s;
+}
+
+.gallery-link:hover .food-description {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 1s;
+}
+/* End of section 3 */
